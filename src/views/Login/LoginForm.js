@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import { Button, TextField } from '@material-ui/core';
 import { login } from 'src/actions';
+import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 const schema = {
   email: {
@@ -68,7 +69,8 @@ function LoginForm({ className, ...rest }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // dispatch(login());
+    // call login
+    signInWithGoogle();
     history.push('/');
   };
 
